@@ -1,0 +1,655 @@
+/* ================= VARIÁVEIS ================= */
+
+:root {
+    --cor-background: #FEFAE0;
+    --cor-principal: #606C38;
+    --cor-secundaria: #A3B18A;
+    --cor-botoes: #F4E285;
+    --cor-branco: #ffffff;
+
+    --fonte-texto: "DynaPuff", system-ui;
+    --fonte-titulo: "Mystery Quest", system-ui;
+}
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-background);
+    font-family: var(--fonte-texto);
+    color: var(--cor-principal);
+}
+
+/* ================= TIPOGRAFIA ================= */
+
+h1, h2, h3, h4 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--cor-botoes);
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    text-align: center;
+}
+
+.hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hd img {
+    border-radius: 50%;
+    width: 180px;
+}
+
+.hn ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hn a {
+    font-weight: bold;
+}
+
+/* ================= MAIN ================= */
+
+.mi {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* ================= SEÇÕES ================= */
+
+section {
+    margin-bottom: 60px;
+}
+
+.mis1,
+.mis2,
+.mis3,
+.mis4,
+.mis5 {
+    text-align: center;
+}
+
+.mia1,
+.mia2,
+.mia3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.mia1 img,
+.mia2 img,
+.mia3 img {
+    width: 250px;
+    border-radius: 12px;
+}
+
+/* ================= TABELAS ================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 2px solid var(--cor-secundaria);
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: var(--cor-botoes);
+    transition: 0.3s;
+}
+
+/* ================= LISTA QUALIDADE ================= */
+
+ol {
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+}
+
+.span {
+    font-weight: bold;
+}
+
+
+
+/* ================= GALERIA ORGANIZADA ================= */
+
+.mid,
+.mid2 {
+    display: flex;              /* Coloca lado a lado */
+    flex-wrap: wrap;            /* Quebra linha automaticamente */
+    justify-content: center;    /* Centraliza */
+    gap: 15px;                  /* Espaço entre imagens */
+}
+
+.mid img,
+.mid2 img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mid img:hover,
+.mid2 img:hover {
+    transform: scale(1.08);
+}
+/* ================= VÍDEOS ================= */
+
+.mid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ================= BOTÃO FIXO ================= */
+
+.botao-inicio {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-botoes);
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.botao-inicio a {
+    color: var(--cor-principal);
+}
+
+/* ================= WHATSAPP FIXO ================= */
+
+.imgwhats {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: var(--cor-secundaria);
+    padding: 30px;
+    text-align: center;
+}
+
+footer iframe {
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+/* ================= FEEDBACK ================= */
+
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.feedback-form {
+    background: white;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.feedback-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.inp,
+select,
+.txta {
+    padding: 10px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.inp:focus,
+select:focus,
+.txta:focus {
+    border-color: var(--cor-principal);
+}
+
+.txta {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+}
+
+.btn-feedback {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-botoes);
+    color: var(--cor-principal);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-feedback:hover {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+/* ================= CADASTRO ================= */
+
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.cadastro-form {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.cadastro-form h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-principal);
+    padding-left: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.inp {
+    padding: 10px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    font-family: var(--fonte-texto);
+    transition: 0.3s;
+}
+
+.inp:focus {
+    border-color: var(--cor-principal);
+}
+
+/* CHECKBOX EM GRADE */
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* LINHAS DE CHECK */
+
+.check-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* BOTÕES */
+
+.btn-area {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-principal,
+.btn-secundario {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-principal {
+    background-color: var(--cor-botoes);
+    color: var(--cor-principal);
+}
+
+.btn-principal:hover {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+.btn-secundario {
+    background-color: #ddd;
+}
+
+.btn-secundario:hover {
+    background-color: #bbb;
+}
+
+/* Caixa do formulário mais elegante */
+.fcg {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 18px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Organização interna */
+.formcg {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.formcg br {
+    display: none;
+}
+
+/* Inputs modernos */
+.contato-geral,
+.contato-geral-assunto,
+.txt-assunto {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: #f9f9ff;
+}
+
+/* Efeito ao clicar */
+.contato-geral:focus,
+.contato-geral-assunto:focus,
+.txt-assunto:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+    background-color: #ffffff;
+}
+
+/* Textarea */
+.txt-assunto {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Botões modernos */
+.butcg {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.butcg[type="button"] {
+    background: linear-gradient(135deg, #6c63ff, #4b4fa3);
+    color: white;
+}
+
+.butcg[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+}
+
+.butcg[type="reset"] {
+    background-color: #eeeeee;
+}
+
+.butcg[type="reset"]:hover {
+    background-color: #dddddd;
+}
+
+/* Fundo e centralização */
+.main-pedidos {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Caixa principal */
+.field-pedidos {
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    border-radius: 20px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Organização geral do form */
+.field-pedidos form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.field-pedidos br {
+    display: none;
+}
+
+/* Inputs padrão */
+.inp,
+.selection-class {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9ff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.inp:focus,
+.selection-class:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+    background-color: #ffffff;
+}
+
+/* Organizar radios em grid */
+.pedidos-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 16px;
+    margin-top: 10px;
+}
+
+.pedidos-section p {
+    grid-column: 1 / -1;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Labels */
+.lcg {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Botão final */
+.field-pedidos .butcg {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 600;
+    background: linear-gradient(135deg, #6c63ff, #4b4fa3);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.field-pedidos .butcg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+
+    .hd {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .hn ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mid3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Ajustar padding geral */
+    main {
+        padding: 20px;
+    }
+
+    /* Inputs ocupando 100% */
+    .inp,
+    .contato-geral,
+    .selection-class {
+        width: 100%;
+    }
+
+    /* Caixa dos formulários mais confortável */
+    .fcg,
+    .field-pedidos {
+        padding: 20px;
+    }
+
+}

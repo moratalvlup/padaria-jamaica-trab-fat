@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Mystery+Quest&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="fb">
+    <header class="fh">
+        <nav class="fn">
+            <ul>
+                <li><a href="./index.html">Voltar a página inicial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <main class="fm">
+        <fieldset class="ff">
+            <legend>
+                <h1>Faça seu cadastro para receber nossas atualizações</h1>
+            </legend>
+
+            <form class="fmc" action="">
+                <section class="fs">
+                    <h2>Dados pessoais</h2>
+                    <label class="lcg" for="name">Nome Completo</label>
+                    <input class="inp" type="text" placeholder="Digite seu nome completo" id="name" required>
+
+                    <br>
+
+                    <label class="lcg" for="mail">Seu e-mail</label>
+                    <input class="inp" type="email" name="mail" id="mail" placeholder="Digite seu endereço de e-mail" required>
+
+                    <br>
+
+                    <label class="lcg" for="tel">Telefone</label>
+                    <input class="inp" type="tel" name="tel" id="tel" placeholder="Digite seu nº de telefone" required
+                        pattern="[0-9]{10,11}" title="Digite apenas os números, incluindo o DDD (10 ou 11 dígitos)"
+                        maxlength="11">
+
+                    <br>
+
+                    <label class="lcg" for="nasc">Data de nascimento</label>
+                    <input type="date" name="nasc" id="nasc">
+
+                </section>
+
+                <section class="fs">
+                    <h2 class="">Dados para entrega</h2>
+
+                    <label class="lcg" for="end">Nome da Rua</label>
+                    <input class="inp" type="text" name="end" id="end" required placeholder="digite o nome da sua rua">
+
+                    <br>
+
+                    <label class="lcg" for="num">Número</label>
+                    <input class="inp" type="number" name="num" id="num" required placeholder="digite o numero da sua casa">
+
+                    <br>
+
+                    <label class="lcg" for="bairro">Bairro</label>
+                    <input class="inp" type="text" name="bairro" id="bairro" required placeholder="Digite o nome do seu bairro">
+
+                    <br>
+
+                    <label class="lcg" for="cep">CEP</label>
+                    <input class="inp" type="tel" required pattern="[0-9]{5}-[0-9]{3}" placeholder="Digite seu cep">
+
+                </section>
+
+                <section class="fs">
+                    <h2>Produtos favoritos</h2>
+
+
+                    <input class="cc" type="checkbox" name="" id="pao">
+                    <label class="lcg" for="pao">Pão Frances</label>
+
+                    <input class="cc" type="checkbox" name="" id="pcj">
+                    <label class="lcg" for="pcj">Pão de Coco "Jamaica"</label>
+
+                    <input class="cc" type="checkbox" name="" id="bag">
+                    <label class="lcg" for="bag">Baguete Recheada</label>
+
+                    <input class="cc" type="checkbox" name="" id="pdq">
+                    <label class="lcg" for="pdq">Pão de Queijo Especial</label>
+
+                    <input class="cc" type="checkbox" name="" id="sdc">
+                    <label class="lcg" for="sdc">Sonho de Creme</label>
+
+                    <input class="cc" type="checkbox" name="opt" id="bm">
+                    <label class="lcg" for="bm">Fatia de Bolo de Milho</label>
+
+                    <input class="cc" type="checkbox" name="opt" id="ca">
+                    <label class="lcg" for="ca">Croissant Amanteigado</label>
+
+                    <input class="cc" type="checkbox" name="opt" id="cpc">
+                    <label class="lcg" for="cpc">Café + Pão na Chapa</label>
+
+                    <input class="cc" type="checkbox" name="opt" id="sdl">
+                    <label class="lcg" for="sdl">Suco de Laranja (300ml)</label>
+
+                    <input class="cc" type="checkbox" name="opt" id="tft">
+                    <label class="lcg" for="tft">Torta de Frutas Tropicais</label>
+
+                </section>
+
+                <section class="fs">
+                    <h2>Nossos termos</h2>
+
+                    <input type="checkbox" name="" id="acept" required>
+                    <label for="acept">Aceita receber promoções por e-mail?</label>
+
+                    <br>
+
+                    <input type="checkbox" name="" id="termos" required>
+                    <label for="termos">Aceita os termos de uso?</label>
+
+                    <br>
+                    <br>
+
+                    <input class="butcg" type="submit" value="enviar cadastro">
+                    <input class="butcg" type="reset" value="Limpar formulário">
+
+                </section>
+            </form>
+        </fieldset>
+
+    </main> -->
+
+    <main class="cadastro-container">
+
+    <form class="cadastro-form">
+
+        <h1>Faça seu cadastro para receber nossas atualizações</h1>
+
+        <!-- DADOS PESSOAIS -->
+        <section class="form-section">
+            <h2>Dados pessoais</h2>
+
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input class="inp" type="text" id="name" required placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="form-group">
+                <label for="mail">Seu e-mail</label>
+                <input class="inp" type="email" id="mail" required placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="form-group">
+                <label for="tel">Telefone</label>
+                <input class="inp" type="tel" id="tel" required pattern="[0-9]{10,11}"
+                    placeholder="Somente números com DDD">
+            </div>
+
+            <div class="form-group">
+                <label for="nasc">Data de nascimento</label>
+                <input class="inp" type="date" id="nasc">
+            </div>
+        </section>
+
+        <!-- ENTREGA -->
+        <section class="form-section">
+            <h2>Dados para entrega</h2>
+
+            <div class="form-group">
+                <label for="end">Rua</label>
+                <input class="inp" type="text" id="end" required>
+            </div>
+
+            <div class="form-group">
+                <label for="num">Número</label>
+                <input class="inp" type="number" id="num" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input class="inp" type="text" id="bairro" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input class="inp" type="text" id="cep" required placeholder="00000-000">
+            </div>
+        </section>
+
+        <!-- FAVORITOS -->
+        <section class="form-section">
+            <h2>Produtos favoritos</h2>
+
+            <div class="checkbox-grid">
+                <label><input type="checkbox"> Pão Francês</label>
+                <label><input type="checkbox"> Pão de Coco</label>
+                <label><input type="checkbox"> Baguete Recheada</label>
+                <label><input type="checkbox"> Pão de Queijo</label>
+                <label><input type="checkbox"> Sonho de Creme</label>
+                <label><input type="checkbox"> Bolo de Milho</label>
+                <label><input type="checkbox"> Croissant</label>
+                <label><input type="checkbox"> Café + Pão na Chapa</label>
+                <label><input type="checkbox"> Suco de Laranja</label>
+                <label><input type="checkbox"> Torta de Frutas</label>
+            </div>
+        </section>
+
+        <!-- TERMOS -->
+        <section class="form-section">
+            <h2>Termos</h2>
+
+            <label class="check-line">
+                <input type="checkbox" required>
+                Aceito receber promoções por e-mail
+            </label>
+
+            <label class="check-line">
+                <input type="checkbox" required>
+                Aceito os termos de uso
+            </label>
+        </section>
+
+        <div class="btn-area">
+            <button type="submit" class="btn-principal">Enviar cadastro</button>
+            <button type="reset" class="btn-secundario">Limpar</button>
+        </div>
+
+    </form>
+
+</main>
+
+</body>
+
+</html>

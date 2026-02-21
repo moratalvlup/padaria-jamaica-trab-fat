@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Mystery+Quest&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Voltar a página inicial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <main>
+        <fieldset>
+            <legend>Deixe sua avaliação sobre nosso atendimento</legend>
+            <form action="">
+                <label for="name">Nome:</label>
+                <input class="inp" type="text" id="name" placeholder="este campo é opcional">
+
+                <label for="email">Email:</label>
+                <input class="inp" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                    placeholder="este campo é opcional">
+
+                <br>
+
+                <label for="">selecione o produto ou serviço:</label>
+
+                <select name="" id="" required>
+                    <option value="">selecione o produto ou serviço</option>
+                    <option value="paes">Pães tradicionais</option>
+                    <option value="doces">Doces e bolos</option>
+                    <option value="ss">Salgados</option>
+                    <option value="aa">Atendimento</option>
+                    <option value="na">Ambiente</option>
+                    <option value="pp">Preços</option>
+                </select>
+
+                <br>
+                <br>
+
+                <input type="radio" id="exc" name="opcao" value="excelente">
+                <label for="exc">Excelente</label>
+
+                <input type="radio" name="opcao" id="bom" value="bom">
+                <label for="bom">Bom</label>
+
+                <input type="radio" name="opcao" id="reg" value="regular">
+                <label for="reg">Regular</label>
+
+                <input type="radio" name="opcao" id="bad" value="ruim">
+                <label for="bad">Ruim</label>
+
+                <br><br>
+
+                <label for="aval">Sua mensagem:</label>
+
+                <textarea class="txta" name="" id="" placeholder="Conte-nos sua experiência"></textarea>
+
+                <br><br>
+
+                <br><br>
+
+                <input class="butcg" type="checkbox" id="anonimo" name="anonimo" placeholder="">
+                <label for="anonimo">Enviar como avaliação anonima?</label>
+
+                <input class="butcg" type="submit" value="enviar avaliacao">
+
+            </form>
+        </fieldset>
+    </main> -->
+    <main class="feedback-container">
+
+    <form class="feedback-form">
+
+        <h2>Deixe sua avaliação sobre nosso atendimento</h2>
+
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input class="inp" type="text" id="name" placeholder="Este campo é opcional">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="inp" type="email" id="email"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                placeholder="Este campo é opcional">
+        </div>
+
+        <div class="form-group">
+            <label for="produto">Selecione o produto ou serviço:</label>
+            <select id="produto" required>
+                <option value="">Selecione...</option>
+                <option value="paes">Pães tradicionais</option>
+                <option value="doces">Doces e bolos</option>
+                <option value="ss">Salgados</option>
+                <option value="aa">Atendimento</option>
+                <option value="na">Ambiente</option>
+                <option value="pp">Preços</option>
+            </select>
+        </div>
+
+        <div class="form-group radio-group">
+            <label>Avaliação:</label>
+            <div class="radio-options">
+                <label><input type="radio" name="opcao" value="excelente"> Excelente</label>
+                <label><input type="radio" name="opcao" value="bom"> Bom</label>
+                <label><input type="radio" name="opcao" value="regular"> Regular</label>
+                <label><input type="radio" name="opcao" value="ruim"> Ruim</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="aval">Sua mensagem:</label>
+            <textarea id="aval" class="txta"
+                placeholder="Conte-nos sua experiência"></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" id="anonimo">
+                Enviar como avaliação anônima?
+            </label>
+        </div>
+
+        <button type="submit" class="btn-feedback">
+            Enviar avaliação
+        </button>
+
+    </form>
+
+</main>
+</body>
+
+</html>

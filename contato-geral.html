@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato-Geral</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Mystery+Quest&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bcg">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Voltar a página inicial</a></li>
+                <li><a href="">Pedidos Especiais</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <fieldset class="fcg">
+            <legend class="">
+                Preencha com seus dados nos campos abaixo para nos contatar:
+            </legend>
+            <form class="formcg" action="">
+
+                <label class="lcg" for="name">Nome Completo:</label>
+                <input class="contato-geral" type="text" id="name" placeholder="Digite seu nome completo" required>
+
+                <br>
+
+                <label class="lcg" for="email">Email:</label>
+                <input class="contato-geral" type="email" id="email" name="email"
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required placeholder="Digite seu e-mail">
+
+                <br>
+
+                <label for="ass">Assunto:</label>
+                <select class="contato-geral-assunto" name="" id="ass" required>
+                    <option value="">Selecione um assunto</option>
+                    <option value="info">Informações gerais</option>
+                    <option value="rec">Reclamação</option>
+                    <option value="sug">Sugestão</option>
+                    <option value="elog">Elogio</option>
+                    <option value="esp">Pedido Especial</option>
+                    <option value="out">Outros</option>
+                </select>
+
+                <br>
+
+                <textarea class="txt-assunto" name="msg" id="" placeholder="Digite sua mensagem"></textarea>
+
+                <br>
+
+                <input class="butcg" type="button" value="enviar">
+                <input class="butcg" type="reset" value="limpar formulario">
+
+            </form>
+
+        </fieldset>
+
+    </main>
+</body>
+
+</html>

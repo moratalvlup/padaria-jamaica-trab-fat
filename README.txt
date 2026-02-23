@@ -108,7 +108,7 @@ Links Externos (./)
 -----------------------------------------------------------
 Implementado:
 
-- position: fixed
+  - position: fixed
   - Botão "Voltar ao Início"
   - Botão de contato via WhatsApp
 

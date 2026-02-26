@@ -89,6 +89,17 @@ header {
 
 /* ================= SEÇÕES ================= */
 
+.busca-container {
+    margin-bottom: 20px;
+}
+#inputBusca {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+}
+
 section {
     margin-bottom: 60px;
 }

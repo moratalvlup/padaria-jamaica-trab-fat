@@ -164,3 +164,32 @@ function calcularPreco(preco, produto) {
 // const add = (a, b) => a * b;
 
 const calcularPrecos = (preco, produto) => preco * produto;
+
+// ==========================================
+// 🔎 Funcionalidade de Busca (Filtro)
+// ==========================================
+
+function filtrarProdutos() {
+    // 1. Pega o valor digitado e transforma em minúsculo para facilitar a busca
+    const termoBusca = document.getElementById("inputBusca").value.toLowerCase();
+    
+    // 2. Seleciona todas as linhas (tr) do corpo da tabela (tbody)
+    const tabela = document.querySelector(".mit tbody");
+    const linhas = tabela.getElementsByTagName("tr");
+
+    // 3. Percorre cada linha da tabela
+    for (let i = 0; i < linhas.length; i++) {
+        const celulaProduto = linhas[i].getElementsByTagName("td")[1]; // A coluna do nome é a [1]
+        
+        if (celulaProduto) {
+            const textoProduto = celulaProduto.textContent.toLowerCase();
+            
+            // 4. Se o termo digitado estiver no texto do produto, mostra a linha, senão esconde
+            if (textoProduto.includes(termoBusca)) {
+                linhas[i].style.display = ""; // Mostra a linha
+            } else {
+                linhas[i].style.display = "none"; // Esconde a linha
+            }
+        }
+    }
+}

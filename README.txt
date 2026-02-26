@@ -1,122 +1,82 @@
-===========================================================
-                    PROJETO: PADARIA JAMAICA
-===========================================================
+# 🥖 Projeto Integrador: Padaria Jamaica
 
-Status do Projeto: Em Construção 🚧
+**Status:** Material de Estudo e Desenvolvimento Ativo 🚧
+**Desenvolvedor:** Fernando Franke Morata
 
------------------------------------------------------------
-1. SOBRE O PROJETO
------------------------------------------------------------
-Este projeto consiste no desenvolvimento do site institucional
-da Padaria Jamaica.
+---
 
-A proposta foi criar uma aplicação no modelo One Page,
-apresentando de forma clara e organizada:
+## 1. 📝 Visão Geral do Projeto
+Este site é uma plataforma **One Page** (página única) que utiliza navegação por âncoras. Ele foi planejado para ser um hub completo, unindo informações institucionais, cardápio dinâmico e sistemas de captura de dados (formulários).
 
-- História da padaria
-- Produtos oferecidos
-- Diferenciais de qualidade
-- Horários de funcionamento
-- Galeria de imagens
-- Informações de contato
+---
 
-O foco principal foi aplicar boas práticas de estruturação
-HTML, organização semântica e acessibilidade.
+## 2. 🏗️ Estrutura de Código (HTML5) - O Esqueleto
+O seu HTML utiliza tags que comunicam significado ao navegador:
 
------------------------------------------------------------
-2. TECNOLOGIAS UTILIZADAS
------------------------------------------------------------
-- HTML5 (Estruturação semântica moderna)
-- CSS3 (Estilização e posicionamento)
-- JavaScript (Interatividade e dinamismo)
+- **`<header>` (Cabeçalho):** Contém a identidade (`img`) e a navegação principal (`nav`).
+- **`<main>` (Conteúdo Principal):** Centraliza as seções (`section`) de conteúdo real.
+- **`<article>`:** Usado dentro das seções para agrupar conteúdos que fazem sentido sozinhos (como a história da padaria).
+- **`<iframe>`:** Porta de entrada para conteúdos externos. Você o usa para o **Google Maps** e **YouTube**.
+- **`<video>` e `<source>`:** Usados para mídias locais, garantindo que o site funcione mesmo sem internet externa.
 
------------------------------------------------------------
-3. ESTRUTURA DO CÓDIGO
------------------------------------------------------------
-O site foi construído seguindo boas práticas de SEO,
-acessibilidade e organização semântica.
+---
 
-Elementos utilizados:
+## 3. 🎨 Estilização Avançada (CSS3) - O Design
+Seu CSS não é apenas estético, ele possui engenharia:
 
-HEADER
-- Logotipo
-- Título principal
-- Menu de navegação
+- **Variáveis Globais (`:root`):** Centralizam a paleta de cores. Se você mudar `--cor-principal`, o site inteiro muda instantaneamente.
+- **Reset (`* { margin: 0; }`):** Remove as configurações padrão do navegador para que o seu design seja igual em qualquer computador.
+- **Posicionamento `fixed`:** - **Botão Início:** Sempre disponível no canto inferior.
+    - **Ícone WhatsApp:** Facilita o contato imediato (estratégia de conversão).
+- **Efeito `hover`:** Nas imagens da galeria e botões, cria uma resposta visual (zoom/troca de cor) que indica ao usuário que o elemento é clicável.
 
-NAV
-- Links internos com âncoras para rolagem suave
-- Links externos para páginas adicionais
+---
 
-MAIN
-Seções organizadas com <section>:
+## 🧠 4. A Lógica do Cérebro (JavaScript) - O Motor
+Aqui explicamos os "comos" técnicos que você implementou:
 
-- Sobre (#sobre)
-  História e missão da padaria.
+### 🔎 O Filtro de Produtos (Busca)
+O código varre a tabela usando um **Loop For**.
+1. **`document.getElementById`**: Localiza a caixa de busca.
+2. **`.toLowerCase()`**: "Burla" a diferença entre maiúsculas e minúsculas.
+3. **`linhas[i]`**: O `i` é o contador. Ele começa em 0 (1ª linha) e o `i++` faz ele pular para a próxima linha (`i = 1, i = 2...`).
+4. **`.includes()`**: Verifica se o pedaço do texto buscado existe dentro do nome do produto.
+5. **`display: "none"`**: Esconde o que não combina.
 
-- Produtos (#produtos)
-  Cardápio detalhado utilizando tabelas (<table>).
+### 🕒 Saudação com Objeto `Date`
+O JavaScript acessa o relógio interno do computador (`new Date().getHours()`) e executa uma **Estrutura Condicional (`if/else`)** para decidir se diz "Bom dia", "Boa tarde" ou "Boa noite".
 
-- Diferenciais (#diferenciais)
-  Lista ordenada (<ol>) destacando qualidade e processos.
+---
 
-- Horários (#horarios)
-  Tabela com funcionamento semanal.
+## 📋 5. Sistemas de Formulários (Interatividade)
+Seu projeto possui 4 áreas de coleta de dados distintas, cada uma com um propósito:
 
-- Galeria (#galeria)
-  Exibição de imagens e integração de mídia.
+1. **Contato Geral:** Focado em mensagens simples (Assunto e Mensagem).
+2. **Feedback:** Usa botões do tipo `radio` (escolha única) para avaliar o atendimento.
+3. **Pedidos Especiais:** Usa `checkbox` (múltipla escolha) para selecionar adicionais e ingredientes.
+4. **Cadastro:** Focado em coleta de dados pessoais (Nome, E-mail, Telefone) para programas de fidelidade.
 
-- Contato (#ctt)
-  Informações de contato e localização.
+---
 
-FOOTER
-- Direitos reservados
-- Informações complementares
-- Localização via Google Maps
+## 📖 6. Guia de Estudos: Conceitos Chave
 
------------------------------------------------------------
-4. MÍDIAS E INTEGRAÇÕES
------------------------------------------------------------
-Imagens:
-- Otimizadas
-- Utilização do atributo "alt" para acessibilidade
+| Conceito | Explicação Didática |
+| :--- | :--- |
+| **`i++`** | O passo da caminhada. Sem ele, você fica parado na primeira linha da tabela (Loop Infinito). |
+| **`length`** | O tamanho da pilha de fichas. Diz ao código quando parar de procurar. |
+| **`DOM`** | A ponte entre o HTML e o JS. Permite que o JS "pegue" uma peça do HTML e a transforme. |
+| **`Events`** | O "ouvinte". O `oninput` ou `onclick` são sensores que esperam o usuário agir. |
+| **`id` vs `class`** | O `id` é o CPF (único); a `class` é o uniforme (vários elementos podem usar). |
 
-Vídeo Local:
-- Implementação com a tag <video>
-- Uso de <source> e controles nativos
+---
 
-Vídeo Externo:
-- Integração com YouTube via <iframe>
+## 📁 7. Organização de Arquivos
+- `/index.html`: A base de tudo.
+- `/css/style.css`: A inteligência visual.
+- `/js/script.js`: O comportamento dinâmico.
+- `/images/ambiente/` e `/images/produtos/`: Organização de pastas para facilitar a manutenção.
 
-Mapa:
-- Integração com Google Maps Embed
+---
 
------------------------------------------------------------
-5. SISTEMA DE NAVEGAÇÃO
------------------------------------------------------------
-Navegação híbrida implementada:
-
-Links Internos (#)
-- Âncoras para navegação entre seções da página inicial
-
-Links Externos (./)
-- Navegação entre páginas adicionais como:
-  - Pedidos
-  - Feedback
-
------------------------------------------------------------
-6. POSICIONAMENTO (CSS)
------------------------------------------------------------
-Implementado:
-
-  - position: fixed
-  - Botão "Voltar ao Início"
-  - Botão de contato via WhatsApp
-
-Objetivo:
-Melhorar a usabilidade e facilitar o acesso rápido às ações principais.
-
------------------------------------------------------------
-AUTOR
------------------------------------------------------------
-Desenvolvido por: Fernando Franke Morata
-Data: 19 de Janeiro de 2026
+## 👤 Autor
+**Desenvolvido por:** Fernando Franke Morata  

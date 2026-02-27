@@ -58,8 +58,6 @@ a:hover {
 
 
 header {
-    position: sticky;
-    top: 0;
     background-color: var(--cor-background);
     width: 100%;
     padding: 10px 0px;
@@ -287,13 +285,13 @@ ol {
 .mid2 {
     display: flex;
     /* Coloca lado a lado */
-    /* flex-wrap: wrap; */
-    /* Quebra linha automaticamente */
-    /* justify-content: center; */
-    /* Centraliza */
-    /* gap: 15px; */
-    /* Espaço entre imagens */
-/* } */ 
+/* flex-wrap: wrap; */
+/* Quebra linha automaticamente */
+/* justify-content: center; */
+/* Centraliza */
+/* gap: 15px; */
+/* Espaço entre imagens */
+/* } */
 
 .mid,
 .mid2 {

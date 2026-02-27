@@ -27,7 +27,13 @@ body {
 
 /* ================= TIPOGRAFIA ================= */
 
-h1, h2, h3, h4 {
+h1 {
+    text-align: center;
+}
+
+h2,
+h3,
+h4 {
     font-family: var(--fonte-titulo);
     margin-bottom: 15px;
 }
@@ -49,42 +55,138 @@ a:hover {
 
 /* ================= HEADER ================= */
 
+
+
 header {
-    background-color: var(--cor-secundaria);
-    padding: 20px;
-    text-align: center;
-}
-
-.hd {
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-background);
+    width: 100%;
+    padding: 10px 0px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* align-items: center; */
+    z-index: 1000;
+}
+
+/* Título principal */
+.ht {
+    margin-bottom: 10px;
+}
+
+/* ===== ÁREA SUPERIOR ===== */
+header .hd {
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: flex-start;
+    position: relative;
+    top: 5px;
+
 }
 
-.hd img {
+
+/* Logo + h2 lado esquerdo */
+/* Linha da logo + slogan */
+.hd {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* coloca um em cima do outro */
+    align-items: flex-start;
+    /* alinhado à esquerda */
+    gap: 8px;
+}
+
+/* Logo */
+.logo-title img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    width: 180px;
 }
 
-.hn ul {
+.logo-saudacao {
+    gap: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+
+}
+
+/* Slogan */
+.h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* NAV abaixo */
+.hn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hu {
     list-style: none;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 18px;
+    padding: 0;
 }
 
-.hn a {
-    font-weight: bold;
+.h2 {
+    margin: 0 0 0 10px;
+}
+
+/* ===== SAUDAÇÃO CENTRALIZADA ===== */
+/* Saudação centralizada */
+#saudacao {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* ===== NAV ABAIXO ===== */
+nav {
+    position: static;
+    background-color: var(--cor-background);
+    top: 0;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 10px 0;
+    /* controla altura da nav */
+}
+
+.hn {
+    margin-top: 15px;
+}
+
+.hu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.hu li a {
+    text-decoration: none;
 }
 
 /* ================= MAIN ================= */
 
 .mi {
-    width: 90%;
+    width: 100%;
     max-width: 1100px;
     margin: 40px auto;
+    padding: 0 20px;
 }
 
 /* ================= SEÇÕES ================= */
@@ -92,6 +194,7 @@ header {
 .busca-container {
     margin-bottom: 20px;
 }
+
 #inputBusca {
     padding: 8px;
     border-radius: 5px;
@@ -124,8 +227,9 @@ section {
 .mia1 img,
 .mia2 img,
 .mia3 img {
-    width: 250px;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
 }
 
 /* ================= TABELAS ================= */
@@ -142,7 +246,8 @@ caption {
     margin-bottom: 10px;
 }
 
-th, td {
+th,
+td {
     border: 2px solid var(--cor-secundaria);
     padding: 10px;
     text-align: center;
@@ -178,12 +283,23 @@ ol {
 
 /* ================= GALERIA ORGANIZADA ================= */
 
+/* .mid,
+.mid2 {
+    display: flex;
+    /* Coloca lado a lado */
+    /* flex-wrap: wrap; */
+    /* Quebra linha automaticamente */
+    /* justify-content: center; */
+    /* Centraliza */
+    /* gap: 15px; */
+    /* Espaço entre imagens */
+/* } */ 
+
 .mid,
 .mid2 {
-    display: flex;              /* Coloca lado a lado */
-    flex-wrap: wrap;            /* Quebra linha automaticamente */
-    justify-content: center;    /* Centraliza */
-    gap: 15px;                  /* Espaço entre imagens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
 }
 
 .mid img,
@@ -200,13 +316,13 @@ ol {
 .mid2 img:hover {
     transform: scale(1.08);
 }
+
 /* ================= VÍDEOS ================= */
 
 .mid3 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 20px;
 }
 
 .video {
@@ -217,6 +333,7 @@ ol {
 /* ================= BOTÃO FIXO ================= */
 
 .botao-inicio {
+    transform: scale(1.05);
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -275,7 +392,7 @@ footer ul {
     width: 100%;
     max-width: 600px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .feedback-form h2 {
@@ -360,7 +477,7 @@ select:focus,
     max-width: 900px;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .cadastro-form h1 {
@@ -624,43 +741,80 @@ select:focus,
     box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
+
 /* ================= RESPONSIVO ================= */
 
 @media (max-width: 768px) {
 
-    .hd {
-        flex-direction: column;
+    header {
+        padding: 15px 10px;
+    }
+
+    .logo-title img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .h2 {
+        font-size: 18px;
         text-align: center;
-        gap: 15px;
     }
 
-    .hn ul {
+    .hu {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        gap: 12px;
     }
 
-    .mid3 {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Ajustar padding geral */
-    main {
-        padding: 20px;
-    }
-
-    /* Inputs ocupando 100% */
-    .inp,
-    .contato-geral,
-    .selection-class {
+    .hu li {
         width: 100%;
     }
 
-    /* Caixa dos formulários mais confortável */
-    .fcg,
+    .hu li a {
+        display: block;
+        padding: 10px;
+        background-color: var(--cor-secundaria);
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .cadastro-form,
+    .feedback-form,
     .field-pedidos {
-        padding: 20px;
+        padding: 25px 20px;
     }
 
+    .btn-area {
+        flex-direction: column;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .mi {
+        max-width: 1300px;
+    }
+
+    body {
+        font-size: 18px;
+    }
 }

@@ -2,7 +2,7 @@
 // 🥖 Informações da Padaria
 // ==============================
 
-const nomePadaria = "Padaria Bairro Feliz";
+const nomePadaria = "Padaria Jamaica";
 const enderecoPadaria = "Rua das Flores, 123 - Centro";
 const telefonePadaria = "(11) 91234-5678";
 
@@ -100,49 +100,59 @@ function saudarCliente() {
 
     if (hora < 12) {
         mensagem = "☀️ Bom dia! Seja bem-vindo à Padaria Jamaica!";
-        alert("☀️ Bom dia! Seja bem-vindo à Padaria Jamaica!")
     }
     else if (hora < 18) {
         mensagem = "🌤️ Boa tarde! Que tal um café fresquinho?";
-        alert("🌤️ Boa tarde! Que tal um café fresquinho?")
     }
     else {
         mensagem = "🌙 Boa noite! Temos pães quentinhos saindo do forno!";
-        alert("🌙 Boa noite! Temos pães quentinhos saindo do forno!")
     }
-
     document.getElementById("saudacao").innerText = mensagem;
 }
 
 
 // 🛒 Uma função que calcule o subtotal de itens (receba preço e quantidade)
 function calcularSubTotal(preco, quantidade) {
-    return preco * quantidade
+    if (preco < 0 || quantidade < 0) return 0;
+    return preco * quantidade;
 }
-
 let resultado = calcularSubTotal(50, 3);
 console.log(resultado);
 
 
 // 🎁 Uma função que calcule desconto (receba valor e percentual de desconto)
 function calcularDesconto(valor, percentual) {
-    return valor - (valor * percentual / 100)
+    if (percentual < 0 || percentual > 100) return valor;
+    return valor - (valor * percentual / 100);
 }
 
 let desconto = calcularDesconto(200, 100);
 console.log(desconto);
 
 // 🚚 Uma função que calcule a taxa de entrega baseada na distância
+// function calcularTaxaEntrega(distancia) {
+//     if (distancia <= 5) {
+//         console.log("A sua entrega é gratuita")
+//     } else if (distancia <= 10) {
+//         console.log("sua entrega custa R$15,00")
+//     } else {
+//         console.log("Sua taxa de entrega é de R$ 25,00")
+//     }
+// }
+// calcularTaxaEntrega(20)
+
 function calcularTaxaEntrega(distancia) {
     if (distancia <= 5) {
-        console.log("A sua entrega é gratuita")
+        return 0;
     } else if (distancia <= 10) {
-        console.log("sua entrega custa R$15,00")
+        return 15;
     } else {
-        console.log("Sua taxa de entrega é de R$ 25,00")
+        return 25;
     }
 }
-calcularTaxaEntrega(20)
+
+let taxa = calcularTaxaEntrega(8);
+console.log("Taxa:", taxa);
 
 /*
 
@@ -170,25 +180,39 @@ const calcularPrecos = (preco, produto) => preco * produto;
 // ==========================================
 
 function filtrarProdutos() {
-    // 1. Pega o valor digitado e transforma em minúsculo para facilitar a busca
-    const termoBusca = document.getElementById("inputBusca").value.toLowerCase();
-    
-    // 2. Seleciona todas as linhas (tr) do corpo da tabela (tbody)
+
+    // Função para remover acentos
+    function removerAcentos(texto) {
+        return texto
+            .normalize("NFD")
+            .replace (/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+    }
+
+    // 1. Pega o valor digitado
+    const termoBusca = removerAcentos(
+        document.getElementById("inputBusca").value
+    );
+
+    // 2. Seleciona tbody
     const tabela = document.querySelector(".mit tbody");
     const linhas = tabela.getElementsByTagName("tr");
 
-    // 3. Percorre cada linha da tabela
+    // 3. Percorre as linhas
     for (let i = 0; i < linhas.length; i++) {
-        const celulaProduto = linhas[i].getElementsByTagName("td")[1]; // A coluna do nome é a [1]
-        
+        const celulaProduto = linhas[i].getElementsByTagName("td")[1];
+
         if (celulaProduto) {
-            const textoProduto = celulaProduto.textContent.toLowerCase();
-            
-            // 4. Se o termo digitado estiver no texto do produto, mostra a linha, senão esconde
+
+            const textoProduto = removerAcentos(
+                celulaProduto.textContent
+            );
+
+            // 4. Verifica se inclui
             if (textoProduto.includes(termoBusca)) {
-                linhas[i].style.display = ""; // Mostra a linha
+                linhas[i].style.display = "";
             } else {
-                linhas[i].style.display = "none"; // Esconde a linha
+                linhas[i].style.display = "none";
             }
         }
     }
